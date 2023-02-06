@@ -1,31 +1,37 @@
-package aula67;
+package Exer2;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
+
         Scanner sc = new Scanner(System.in);
-        Locale.setDefault(Locale.US);
+        Funcionario func = new Funcionario();
 
-        System.out.println("Enter rectangle width and height :");
+        System.out.println("Entre com seus dados : ");
 
-        Retan rect = new Retan();
+        System.out.println("Name :");
+        func.Name = sc.nextLine();
+        System.out.println("Gross salary : ");
+        func.GrossSalary =  sc.nextDouble();
+        System.out.println("Tax : ");
+        func.tax = sc.nextDouble();
 
-        rect.Width = sc.nextDouble();
-        rect.height = sc.nextDouble();
+        System.out.println();
+        System.out.println("Employeeb " + func);
+        System.out.println();
+        System.out.println("Wich percentage salary to increase salary ? ");
 
-        double area = rect.Area();
-        double peri =  rect.Perimeter();
-        double diagonal = rect.Diagonal();
+        double percentage = sc.nextDouble();
+        func.increaseSalary(percentage);
 
-        System.out.println("Area : "+area);
-        System.out.println("Perimeter : "+peri);
-        System.out.println("Diaginal : "+diagonal);
-
-
+        System.out.println();
+        System.out.println("Update data : "+ func);
 
 
+
+
+       sc.close();
 
 
 
